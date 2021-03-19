@@ -1,0 +1,53 @@
+$font: 'Montserrat', sans-serif;
+$ftQuick: 'Quicksand', sans-serif;
+$font-size: 16px;
+
+$primario: rgba(51, 153, 204, 1);
+$secundario: #330033;
+
+$xsScreen:      320px; //mobile default - pequeño (360 * 640) 23% de uso - variacion inferior (320 * 479)
+$smallScreen :  480px; //landscape mobile (480 * 599)
+$mediumScreen:  600px; // (600 * 769)
+$wideScreen  :  760px; // tablet default (768 * 1024)
+$largeScreen :  920px;
+$xlScreen:      1200px; // portatil medio (1366 * 768) 12% de uso
+$opScreen:      1400px; // desktop default escritorio medio (1440 * 900) 3.2%
+
+
+@mixin mQ($media) {
+  @if $media==xsS {
+    @media screen and (min-width:$xsScreen) {
+      @content;
+    }
+  }
+  @else if $media==smallS {
+    @media screen and (min-width:$smallScreen) {
+      @content;
+    }
+  }
+  @else if $media==mediumS {
+    @media screen and (min-width:$mediumScreen) {
+      @content;
+    }
+  }
+  @else if $media==wideS {
+    @media screen and (min-width:$wideScreen) {
+      @content;
+    }
+  }
+  @else if $media==largeS {
+    @media screen and (min-width:$largeScreen) {
+      @content;
+    }
+  }
+  @else if $media==xlS {
+    @media screen and (min-width:$xlScreen) {
+      @content;
+    }
+  }
+  @else if $media==opS {
+    @media screen and (min-width:$opScreen) {
+      @content;
+    }
+  }
+}

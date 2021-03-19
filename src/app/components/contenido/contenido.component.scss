@@ -1,0 +1,413 @@
+@import
+'../../../utilities';
+
+
+
+
+.wrapper{
+  //background-color: forestgreen;
+  background-image: url("../../../assets/images/Fondo1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  //height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+}
+.navbar{
+  //background-color: red;
+  grid-column: 1 / 12;
+  grid-row: 1 / 2;
+  .bar{
+    //background-color: aliceblue;
+    margin: 1rem 0 0 0;
+    height: 80%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    .contentLogo{
+      background-color: #fff;
+      background-image: url("../../../assets/images/Logo.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      box-shadow: -8px 8px 20px -5px rgba(51, 112, 204, .5);
+      grid-column: 1 / 4;
+    }
+    .contentUsuario{
+      background: linear-gradient(45deg, rgba(51, 112, 204, 1), rgba(51, 153, 204, 1));
+      border-radius: 0 40px 40px 0;
+      box-shadow: -8px 8px 20px -5px rgba(51, 112, 204, .5);
+      grid-column: 4 / 13;
+      height: 80%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      align-self: center;
+      padding: 0 10% 0 0;
+    }
+  }
+}
+.bgRect{
+    background-color: #663399;
+    mix-blend-mode: multiply;
+    opacity: 0.6;
+    border-radius: 100px 0 0 100px ;
+    grid-column: 2 / 13;
+    grid-row: 3 / 11;
+    margin: -4rem 0;
+  }
+.main{
+  //background-color: #663399;
+  grid-column: 1 / 13;
+  grid-row: 2 / 12;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+
+  .content{
+    //background-color:orange;
+    grid-column: 3 / 13;
+    grid-row: 2 / 13;
+    z-index: 10;
+    // display: grid;
+    // grid-template-columns: repeat(12, 1fr);
+    // grid-template-rows: repeat(6, 1fr);
+    &__questions{
+      //background-color: aqua;
+      // grid-column: 3 / 11;
+      // grid-row: 1 / 3;
+      color: #fff;
+      font-size: 1.5rem;
+      text-align: justify;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 1rem;
+      p{
+        font-family: $ftQuick;
+        font-weight:bold;
+        font-size: 1rem;
+      }
+    }
+    &__ask{
+      //background-color: salmon;
+      // grid-column: 1 / 13;
+      // grid-row: 3 / 6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      &--option{
+        //background-color: aqua;
+        //margin: 0 1rem;
+        .emoji{
+          //background: firebrick;
+
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 200px;
+          height: 200px;
+        }
+        .text{
+          //background-color: bisque;
+          text-align: center;
+          font-size: 1rem;
+          color: #fff;
+          display: block;
+          height: 70px;
+          width: 200px;
+          font-family: $ftQuick;
+          font-weight:bold;
+        }
+
+      }
+      .op1{
+        background-image: url("../../../assets/images/meGusta.png");
+      }
+      .op2{
+        background-image: url("../../../assets/images/noMeGusta.png");
+      }
+      .op3{
+        background-image: url("../../../assets/images/indiferente.png");
+      }
+      .op4{
+        background-image: url("../../../assets/images/desconocido.png");
+      }
+    }
+  }
+}
+.footer{
+  background: linear-gradient(45deg, rgba(51, 100, 204, 1) 30%, rgba(51, 153, 204, 1) 100%);
+  border-radius: 0 40px 40px 0;
+  grid-column: 1 / 12;
+  grid-row: 12 / 13;
+  //margin-right: -2rem;
+  height: 50%;
+  z-index: 20;
+  margin: 1rem 0 0 0;
+  .bar{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    height: 100%;
+    .contentSection{
+      //background-color: rosybrown;
+      grid-column: 1 / 4;
+      // height: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      h4{
+        font-family: $font;
+        font-size: .7rem;
+        font-weight:600;
+      }
+    }
+    .contentProgress{
+      background-color: #4b004b;
+      margin: 1rem 1rem 1rem 0;
+      border-radius: 40px;
+      grid-column: 4 / 13;
+    }
+  }
+}
+
+// ================================================================
+// ======================= MEDIA QUERIES ==========================
+// ================================================================
+// ================================================================
+// ======================= 480 => 599 ===========================
+// ================================================================
+@include mQ(smallS){
+  .wrapper{
+  //background-color: forestgreen;
+  height: 100vh;
+}
+.navbar{
+  //background-color: red;
+  .bar{
+    //background-color: aliceblue;
+    .contentLogo{
+      // background-color: #fff;
+    }
+    .contentUsuario{
+      // background: linear-gradient(45deg, rgba(51, 112, 204, 1), rgba(51, 153, 204, 1));
+    }
+  }
+}
+.bgRect{
+    // background-color: #663399;
+  }
+.main{
+  //background-color: #663399;
+
+  .content{
+    //background-color:orange;
+    &__questions{
+      //background-color: aqua;
+    }
+    &__ask{
+      //background-color: salmon;
+      &--option{
+        //background-color: aqua;
+        .emoji{
+          //background: firebrick;
+        }
+        .text{
+          //background-color: bisque;
+        }
+      }
+    }
+  }
+}
+.footer{
+  // background: linear-gradient(45deg, rgba(51, 100, 204, 1) 30%, rgba(51, 153, 204, 1) 100%);
+  height: 70%;
+  .bar{
+    .contentSection{
+      //background-color: rosybrown;
+      h4{
+        font-size: 1.2rem;
+      }
+    }
+    .contentProgress{
+      // background-color: #4b004b;
+    }
+  }
+}
+}
+// ================================================================
+// ======================= 600 => 759 ===========================
+// ================================================================
+@include mQ(mediumS){
+  .wrapper{
+    //background-color: forestgreen;
+  }
+  .navbar{
+    //background-color: red;
+    grid-column: 2 / 12;
+    .bar{
+      //background-color: aliceblue;
+      .contentLogo{
+        // background-color: #fff;
+      }
+      .contentUsuario{
+        // background: linear-gradient(45deg, rgba(51, 112, 204, 1), rgba(51, 153, 204, 1));
+      }
+    }
+  }
+  .bgRect{
+      border-radius: 100px 100px 0 0;
+      grid-column: 2 / 12;
+      grid-row: 3 / 13;
+      margin: -2rem 0 0 0;
+    }
+  .main{
+    grid-column: 2 / 12;
+    grid-row: 3 / 12;
+
+    .content{
+      grid-column: 2 / 12;
+      grid-row: 2 / 12;
+      &__ask{
+        //background-color: salmon;
+        &--option{
+          //background-color: aqua;
+          .emoji{
+            //background: firebrick;
+          }
+          .text{
+            //background-color: bisque;
+          }
+
+        }
+      }
+    }
+  }
+  .footer{
+    grid-column: 1 / 10;
+    height: 70%;
+    .bar{
+      .contentSection{
+        h4{
+          font-size: 1.2rem;
+        }
+      }
+      .contentProgress{
+        // background-color: #4b004b;
+      }
+    }
+  }
+}
+// ================================================================
+// ======================= 760 => 919 ===========================
+// ================================================================
+@include mQ(wideS){
+
+}
+// ================================================================
+// ======================= 920 => 1199 ===========================
+// ================================================================
+@include mQ(largeS){
+
+}
+// ================================================================
+// ======================= 1200 => 1399 ===========================
+// ================================================================
+@include mQ(xlS){
+  .wrapper{
+    //background-color: forestgreen;
+    height: 100vh;
+  }
+  .navbar{
+    //background-color: red;
+    grid-column: 2 / 12;
+    .bar{
+      //background-color: aliceblue;
+      height: 100%;
+      .contentLogo{
+        // background-color: #fff;
+        grid-column: 1 / 3;
+      }
+      .contentUsuario{
+        // background: linear-gradient(45deg, rgba(51, 112, 204, 1), rgba(51, 153, 204, 1));
+        grid-column: 3 / 13;
+      }
+    }
+  }
+  .bgRect{
+      // background-color: #663399;
+      border-radius: 100px 100px 0 0 ;
+      grid-column: 4 / 10;
+      grid-row: 3 / 13;
+      margin: 0 0;
+    }
+  .main{
+    //background-color: #663399;
+
+    .content{
+      //background-color:orange;
+      grid-column: 3 / 11;
+      grid-row: 2 / 13;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      &__questions{
+        //background-color: aqua;
+        grid-column: 3 / 11;
+        grid-row: 1 / 3;
+        font-size: 1.5rem;
+        margin-right: 0;
+        p{
+          font-size: 1.5rem;
+        }
+      }
+      &__ask{
+        //background-color: salmon;
+        grid-column: 1 / 13;
+        grid-row: 3 / 6;
+        flex-wrap: nowrap;
+        &--option{
+          //background-color: aqua;
+          margin: 0 1rem;
+          .emoji{
+            //background: firebrick;
+            width: 250px;
+            height: 250px;
+          }
+          .text{
+            //background-color: bisque;
+            font-size: 1.5rem;
+            width: 250px;
+          }
+
+        }
+      }
+    }
+  }
+  .footer{
+    grid-column: 1 / 9;
+    margin-right: -2rem;
+    height: 70%;
+    .bar{
+      .contentSection{
+        h4{
+          font-size: 1.5rem;
+          font-weight:800;
+        }
+      }
+      .contentProgress{
+        margin: 1rem 2rem 1rem 0;
+      }
+    }
+  }
+}
+// ================================================================
+// ======================= 1400 =>  ===========================
+// ================================================================
+@include mQ(opS){
+
+}
